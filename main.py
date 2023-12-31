@@ -2,12 +2,10 @@ import datetime
 import pytz
 import requests
 import markdown
-import git
 from bs4 import BeautifulSoup
 
 def run():
     try:
-        repo = git.Repo(".")
         filename = "README.md"
         datetime_obj = datetime.datetime.now()
         fecha = datetime_obj.astimezone(pytz.timezone("America/Buenos_Aires")).strftime("%d/%m/%Y")
@@ -45,10 +43,12 @@ def run():
             with open("README.md", "w") as f:
                 f.write(markdown_document)
             
+            """ repo = Repo(".")
             #Agrego el archivo y lo pusheo
             repo.index.add([filename])
             repo.index.commit(f"Actualizacion el {fecha} a las {hora}")
-            repo.push()
+            origin = repo.remote(name='origin')
+            origin.push() """
 
         else:
             print("Algo salió mal")
