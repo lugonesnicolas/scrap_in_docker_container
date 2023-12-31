@@ -2,10 +2,13 @@ import datetime
 import pytz
 import requests
 import markdown
+import git
 from bs4 import BeautifulSoup
 
 def run():
     try:
+        repo = git.Repo(".")
+        filename = "README.md"
         datetime_obj = datetime.datetime.now()
         fecha = datetime_obj.astimezone(pytz.timezone("America/Buenos_Aires")).strftime("%d/%m/%Y")
         hora = datetime_obj.astimezone(pytz.timezone("America/Buenos_Aires")).strftime("%H:%M:%S")
@@ -24,13 +27,13 @@ def run():
                     compra=j.find('div', class_="compra")
                     venta=j.find('div', class_="venta")
                     if titulo.text != 'Dólar Tarjeta':
-                        markdown_text.append(f"{titulo.text}\n\n")
-                        markdown_text.append(f"Compra {(compra.find('div', class_='val').text)}\n\n")
+                        markdown_text.append(f"{titulo.text}: ")
+                        markdown_text.append(f"Compra {(compra.find('div', class_='val').text)}, ")
                         markdown_text.append(f"Venta {(venta.find('div', class_='val').text)}\n\n")
                         # print(f"Compra {(compra.find('div', class_='val').text)}")
                         # print(f"Venta {(venta.find('div', class_='val').text)}")
                     else:
-                        markdown_text.append(f"{titulo.text}\n\n")
+                        markdown_text.append(f"{titulo.text}: ")
                         markdown_text.append(f"Venta {(venta.find('div', class_='val').text)}\n\n")
                         #print(f"Venta {(venta.find('div', class_='val').text)}")
                             
@@ -40,7 +43,13 @@ def run():
             markdown_document = markdown.markdown("".join(markdown_text))
             # Save the Markdown document to a file
             with open("README.md", "w") as f:
-                f.write(markdown_document) 
+                f.write(markdown_document)
+            
+            #Agrego el archivo y lo pusheo
+            repo.index.add([filename])
+            repo.index.commit(f"Actualizacion el {fecha} a las {hora}")
+            repo.push()
+
         else:
             print("Algo salió mal")
 
