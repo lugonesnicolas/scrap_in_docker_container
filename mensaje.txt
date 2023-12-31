@@ -1,0 +1,1 @@
+Archivo creado dentro de la consola del container
