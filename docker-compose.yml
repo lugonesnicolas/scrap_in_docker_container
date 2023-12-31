@@ -1,0 +1,10 @@
+version: '1'
+
+services:
+  scrapy_app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: scrapy_app
+    volumes:
+      - /a/repositorios/docker_python:/app
