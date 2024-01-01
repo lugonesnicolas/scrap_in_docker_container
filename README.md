@@ -3,6 +3,6 @@
 <p>Dólar Oficial: Compra $788.25, Venta $828.25</p>
 <p>Dólar Bolsa: Compra $988.95, Venta $997.45</p>
 <p>Contado con liqui: Compra $956.41, Venta $973.94</p>
-<p>Dólar cripto: Compra $956, Venta $989</p>
+<p>Dólar cripto: Compra $954, Venta $990</p>
 <p>Dólar Tarjeta: Venta $1325.20</p>
-<p>Datos actualizados el 01/01/2024 a las 16:26:31</p>
+<p>Datos actualizados el 01/01/2024 a las 16:35:05</p>
