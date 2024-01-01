@@ -1,10 +1,13 @@
 version: '1'
 
 services:
-  scrapy_app:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: scrapy_app
-    volumes:
-      - /a/repositorios/docker_python:/app
+  app:
+    image: python_git
+    command: bash
+    container_name: python_git_container
+    #volumes:
+    #  - ./:/home
+    # La bandera -i le indica a docker utilizar el STDIN del contenedor.
+    # La bandera -t indica que se requiere de una pseudo terminal.
+    stdin_open: true
+    tty: true

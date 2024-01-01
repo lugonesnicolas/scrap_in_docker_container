@@ -1,0 +1,13 @@
+ejecutar consola en el container si ya esta corriendo, docker exec -it 51723756f54e bash
+ejecutar el container con compose, docker-compose run -it app bash
+cerrar el container sin eliminarlo, docker compose down -v
+esto no se que hace, git credential-osxkeychain erase host=github.com protocol=https
+agregar el token a git para hacer el push, git remote set-url origin https://USERNAME:TOKEN@github.com/USERNAME/REPO.git
+Con dockerfile creo la imagen que tiene git
+Para reejecutar la imagen es recomendable usar no cache para que la informacion guardada en la cache no genere conflictos con los resultados,
+docker build --no-cache -t python_git .
+
+
+test:
+#WORKDIR /home/scrap_in_docker_container  # Entramos al directorio del repositorio
+#RUN git remote set-url origin https://lugonesnicolas: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@github.com/lugonesnicolas/scrap_in_docker_container
