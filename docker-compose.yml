@@ -3,7 +3,7 @@ version: '1'
 services:
   app:
     image: python_git
-    command: python main.py
+    command: bash
     container_name: python_git_container
     #volumes:
     #  - ./:/home

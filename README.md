@@ -5,4 +5,4 @@
 <p>Contado con liqui: Compra $956.41, Venta $973.94</p>
 <p>Dólar cripto: Compra $956, Venta $989</p>
 <p>Dólar Tarjeta: Venta $1325.20</p>
-<p>Datos actualizados el 01/01/2024 a las 16:12:03</p>
+<p>Datos actualizados el 01/01/2024 a las 16:16:21</p>
